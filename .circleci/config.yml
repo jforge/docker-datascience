@@ -1,0 +1,15 @@
+version: 2.1
+orbs:
+  docker: circleci/docker@1.6.0
+parameters:
+  image-name:
+    type: string
+    default: datascience
+
+workflows:
+  build_and_publish_docker_image:
+    jobs:
+      - docker/publish:
+          dockerfile: Dockerfile
+          image: $CIRCLE_PROJECT_USERNAME/<< pipeline.parameters.image-name >>
+          readme: README.md

@@ -1,0 +1,4 @@
+.idea
+.vscode
+notebooks/.*
+test_*.ipynb

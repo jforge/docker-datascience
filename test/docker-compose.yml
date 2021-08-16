@@ -1,0 +1,13 @@
+services:
+  jupyter:
+    image: jforge/datascience:latest
+    ports:
+      - "8888:8888/tcp"
+    restart: unless-stopped
+    volumes:
+      - jupyter-notebooks:/notebooks
+    command:
+      - '--NotebookApp.base_url=/ipython'
+
+volumes:
+  jupyter-notebooks:
